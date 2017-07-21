@@ -73,6 +73,7 @@ var utils = {
 
 		console.log("Launching CD call...");
 		utils.createRequest(function(params){
+			console.log(JSON.stringify(params, null, 2));
 			request.post(params, cb);
 		});
 	},
