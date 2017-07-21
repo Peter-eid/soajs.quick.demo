@@ -1,21 +1,15 @@
 pipeline:
     triggerCD:
         image: 'node:6.9.5'
-        secrets:
-            - source: SOAJS_CD_AUTH_KEY
-              target: SOAJS_CD_AUTH_KEY
-            - source: SOAJS_CD_DEPLOY_TOKEN
-              target: SOAJS_CD_DEPLOY_TOKEN
-            - source: SOAJS_CD_DASHBOARD_DOMAIN
-              target: SOAJS_CD_DASHBOARD_DOMAIN
-            - source: SOAJS_CD_API_ROUTE
-              target: SOAJS_CD_API_ROUTE
-            - source: SOAJS_CD_DASHBOARD_PORT
-              target: SOAJS_CD_DASHBOARD_PORT
-            - source: SOAJS_CD_DASHBOARD_PROTOCOL
-              target: SOAJS_CD_DASHBOARD_PROTOCOL
         when:
             status: [success]
+        secrets:
+            - 'source:SOAJS_CD_AUTH_KEY target:SOAJS_CD_AUTH_KEY'
+            - 'source:SOAJS_CD_DEPLOY_TOKEN target:SOAJS_CD_DEPLOY_TOKEN'
+            - 'source:SOAJS_CD_DASHBOARD_DOMAIN target:SOAJS_CD_DASHBOARD_DOMAIN'
+            - 'source:SOAJS_CD_API_ROUTE target:SOAJS_CD_API_ROUTE'
+            - 'source:SOAJS_CD_DASHBOARD_PORT target:SOAJS_CD_DASHBOARD_PORT'
+            - 'source:SOAJS_CD_DASHBOARD_PROTOCOL target:SOAJS_CD_DASHBOARD_PROTOCOL'
         commands:
-            - npm install request
+            - 'npm install request'
             - 'node ./soajs.cd.js'
