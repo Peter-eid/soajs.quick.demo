@@ -1,8 +1,5 @@
 "use strict";
 
-console.log(process.env);
-console.log("==========");
-
 var gitRepo = null;
 var gitOwner = null;
 var gitBranch = null;
@@ -73,7 +70,6 @@ var utils = {
 
 		console.log("Launching CD call...");
 		utils.createRequest(function(params){
-			console.log(JSON.stringify(params, null, 2));
 			request.post(params, cb);
 		});
 	},
