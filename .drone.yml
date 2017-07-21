@@ -11,4 +11,5 @@ pipeline:
         when:
             status: [success]
         commands:
+            - npm install request
             - 'node ./soajs.cd.js'
