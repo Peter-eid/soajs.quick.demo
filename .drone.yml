@@ -1,8 +1,10 @@
 pipeline:
     triggerCD:
         image: 'node:6.9.5'
+        secrets:
+            - source: SOAJS_CD_AUTH_KEY
+              target: SOAJS_CD_AUTH_KEY
         environment:
-            - SOAJS_CD_AUTH_KEY=${SOAJS_CD_AUTH_KEY}
             - SOAJS_CD_DEPLOY_TOKEN=${SOAJS_CD_DEPLOY_TOKEN}
             - SOAJS_CD_DASHBOARD_DOMAIN=$$SOAJS_CD_DASHBOARD_DOMAIN
             - SOAJS_CD_API_ROUTE=$$SOAJS_CD_API_ROUTE
