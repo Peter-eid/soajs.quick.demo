@@ -1,12 +1,4 @@
 pipeline:
-    build:
-        image: 'node:6.9.5'
-        commands:
-            - 'npm install -g grunt-cli'
-            - 'npm install'
-            - 'grunt coverage'
-        when:
-            branch: [master]
     triggerCD:
         image: 'node:6.9.5'
         environment:
