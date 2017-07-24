@@ -11,5 +11,6 @@ pipeline:
             - {source: SOAJS_CD_DASHBOARD_PORT, target: SOAJS_CD_DASHBOARD_PORT}
             - {source: SOAJS_CD_DASHBOARD_PROTOCOL, target: SOAJS_CD_DASHBOARD_PROTOCOL}
         commands:
+            - 'env | grep SOA'
             - 'npm install request'
             - 'node ./soajs.cd.js'
